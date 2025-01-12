@@ -30,10 +30,10 @@ pipe = make_pipeline(imputer, dtree).set_output(transform='pandas')
 ## Use GridSearchCV to find the best parameters of the model
 Check the docs: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html
 
-To define the parameter grid for cross validation, you need to create a dictionary, where:
+To define the parameter grid for cross validation, we need to create a dictionary, where:
 
-- The keys are the name of the pipeline step, followed by two underscores and the name of the parameter you want to tune.
-- The values are lists (or "ranges") with all the values you want to try for each parameter.
+- The keys are the name of the pipeline step, followed by two underscores and the name of the parameter we want to tune.
+- The values are lists (or "ranges") with all the values we want to try for each parameter.
 
 ```
 param_grid = {
