@@ -41,8 +41,8 @@ param_grid = {
     'decisiontreeclassifier__min_samples_leaf': range(3, 10, 2),
     'decisiontreeclassifier__min_samples_split': range(3, 40, 5),
     'decisiontreeclassifier__criterion':['gini', 'entropy']
-    }```
-
+    }
+```
 ```
 search = GridSearchCV(pipe, # you have defined this beforehand
                       param_grid, # your parameter grid
@@ -50,10 +50,6 @@ search = GridSearchCV(pipe, # you have defined this beforehand
                       scoring='accuracy', # the performance metric to use,
                       verbose=1) # we want informative outputs during the training process, try changing it to 2 and see what happens
 ```
-
-
-
-
 
 ### Explore the best parameters and the best score achieved with your cross validation:
 
