@@ -60,27 +60,6 @@ This will require you to create another branch within the categorical branch, so
 Check here the documentation for the Ordinal encoder: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html
 
 
-
-## Impute missing values: 
- ### Fit on train, transform train & test:
-```
-from sklearn.impute import SimpleImputer
-
-my_imputer = SimpleImputer().set_output(transform='pandas')      # initialise
-my_imputer.fit(X_num_train)                                      # fit on the train set
-X_num_imputed_train = my_imputer.transform(X_num_train)          # transform the train set
-X_num_imputed_test = my_imputer.transform(X_num_test)            # transform the test set
-```
-
-
-## Pipeline creation
-Scikit-Learn Pipelines: They streamline data preparation and modeling into one step, but they will not increase the performance of  model.
-```
-from sklearn.pipeline import make_pipeline
-pipe = make_pipeline(imputer, dtree).set_output(transform='pandas')
-```
-
-
 ### Explore the best parameters and the best score achieved with your cross validation:
 
 ```
@@ -88,17 +67,4 @@ search.best_params_
 search.best_score_
 ```
 
-## Categorical encoding - "Automated" approach (Using Pipelines)
 
-In the manual approach, to encode the categorical columns numerically, we have:
-
-1. Selected the categorical columns.
-2. Fitted a `OneHotEncoder` to them.
-3. Transformed the categorical columns with the encoder.
-4. Converted the sparse matrix into a dataframe.
-5. Recovered the names of the columns.
-6. Concatenated the one-hot columns with the numerical columns.
-
-All these steps can be synthetised by using Scikit-Learn Pipelines and specifically something called `ColumnTransformer`, which allows us to apply different transformations to two or more groups of columns: in our case, categorical and numerical columns.
-
-This process is also called creating "branches" in the pipeline. One branch for the categorical columns and another for the numerical columns. Each branch will contain as many transformers as we want. Then, the branches will meet again, and the transformed columns will be automatically concatenated.
