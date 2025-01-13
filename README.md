@@ -72,3 +72,9 @@ In the manual approach, to encode the categorical columns numerically, we have:
 All these steps can be synthetised by using Scikit-Learn Pipelines and specifically something called `ColumnTransformer`, which allows us to apply different transformations to two or more groups of columns: in our case, categorical and numerical columns.
 
 This process is also called creating "branches" in the pipeline. One branch for the categorical columns and another for the numerical columns. Each branch will contain as many transformers as we want. Then, the branches will meet again, and the transformed columns will be automatically concatenated. 
+
+## Iteration 4: ordinal encoding
+Ordinal encoding takes all the classes in a categorical feature and assigns a number to them, starting at 0.
+This will require you to create another branch within the categorical branch, so a new ColumnTransformer will be needed. The pipeline you aim for should look like this: 
+![Steps Project](images/Ordinal_cat.jpeg)
+
