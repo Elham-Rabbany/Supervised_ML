@@ -57,3 +57,18 @@ search = GridSearchCV(pipe, # you have defined this beforehand
 search.best_params_
 search.best_score_
 ```
+
+## Categorical encoding - "Automated" approach (Using Pipelines)
+
+In the manual approach, to encode the categorical columns numerically, we have:
+
+1. Selected the categorical columns.
+2. Fitted a `OneHotEncoder` to them.
+3. Transformed the categorical columns with the encoder.
+4. Converted the sparse matrix into a dataframe.
+5. Recovered the names of the columns.
+6. Concatenated the one-hot columns with the numerical columns.
+
+All these steps can be synthetised by using Scikit-Learn Pipelines and specifically something called `ColumnTransformer`, which allows us to apply different transformations to two or more groups of columns: in our case, categorical and numerical columns.
+
+This process is also called creating "branches" in the pipeline. One branch for the categorical columns and another for the numerical columns. Each branch will contain as many transformers as we want. Then, the branches will meet again, and the transformed columns will be automatically concatenated. 
