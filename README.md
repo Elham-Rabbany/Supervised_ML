@@ -66,5 +66,5 @@ Check here the documentation for the Ordinal encoder: https://scikit-learn.org/s
 search.best_params_
 search.best_score_
 ```
-
-
+## Results
+We applied these processes to other algorithms, including **K-Nearest Neighbors**, **Logistic Regression**, **Support Vector Machine**, and **Random Forest**, to find the best results and compare their performance: 
