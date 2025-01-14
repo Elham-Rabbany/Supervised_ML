@@ -68,3 +68,6 @@ search.best_score_
 ```
 ## Results
 We applied these processes to other algorithms, including **K-Nearest Neighbors**, **Logistic Regression**, **Support Vector Machine**, and **Random Forest**, to find the best results and compare their performance: 
+
+![Compare](images/Compare_Models.jpg)
+
