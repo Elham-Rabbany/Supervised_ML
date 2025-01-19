@@ -1,6 +1,5 @@
 # Supervised_ML_Classification
-Supervised ML_Classification - Predicting Housing Prices
-
+Predicting House Prices: A Classification Approach
 
 In this project, we will create a model that predicts the price of a house based on its characteristics.
  overview of steps:
